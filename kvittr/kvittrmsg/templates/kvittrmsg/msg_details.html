@@ -1,10 +1,13 @@
 {% extends 'theme/frontpage.html' %}
 {% block frontpage %}
-    <h2>Details on message {{ msg.id }}</h2>
-    <ul>
-        <li>{{ msg.msg }}</li>
-        <li>{{ msg.likes }}</li>
-        <li>{{ msg.created_by }}</li>
-        <li>{{ msg.created_datetime }}</li>
-    </ul>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+    		<h2>Details on message {{ msg.id }}</h2>
+    		<ul class="list-group">
+        		<li class="list-group-item">Message: {{ msg.msg }}</li>
+        		<li class="list-group-item">{{ msg.likes }}</li>
+        		<li class="list-group-item">{{ msg.created_by }} on {{ msg.created_datetime }}</li>
+    		</ul>
+    	</div>
+    </div>
 {% endblock %}
