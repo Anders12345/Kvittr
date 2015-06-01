@@ -1,3 +1,19 @@
 .content {
     margin-top: 60px;
 }
+
+.right {
+    width: 30%;
+    float: right;
+}
+
+.left {
+    width: 70%;
+    float: left;
+}
+
+.fpform {
+    background-color: #EDEDED;
+    padding: 5px;
+    margin-bottom: 11px;
+}
