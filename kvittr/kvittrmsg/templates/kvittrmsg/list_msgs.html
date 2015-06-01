@@ -23,7 +23,7 @@
                 <ul class="list-group">
                     {% for msg in msgs %}
                         <li class="list-group-item"><strong>Message:</strong> {{ msg.msg }}</a></li>
-                        <li class="list-group-item"><strong>Written by:</strong> {{ msg.created_by }}</li>        
+                        <li class="list-group-item addmarginbot"><strong>Written by:</strong> {{ msg.created_by }}</li>        
                         {% empty %}
 	                       <li>Sorry, list is empty.</li>
                     {% endfor %}
