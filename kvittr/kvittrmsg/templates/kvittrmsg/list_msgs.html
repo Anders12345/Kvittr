@@ -28,6 +28,22 @@
 	                       <li>Sorry, list is empty.</li>
                     {% endfor %}
                 </ul>
+
+                 <div class="pagination">
+                     <span class="step-links">
+                        {% if msgs.has_previous %}
+                            <a href="?page={{ msgs.previous_page_number }}">previous</a>
+                        {% endif %}
+
+                        <span class="current">
+                            Page {{ msgs.number }} of {{ msgs.paginator.num_pages }}.
+                        </span>
+
+                        {% if msgs.has_next %}
+                            <a href="?page={{ msgs.next_page_number }}">next</a>
+                        {% endif %}
+                    </span>
+                </div>
             </div>
         </div>
 {% endblock %}
