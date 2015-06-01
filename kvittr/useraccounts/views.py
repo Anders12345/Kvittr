@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -18,3 +18,7 @@ def user_login(request):
             messages.add_message(request, messages.INFO, "Login failed")
             return redirect ('frontpage')
     return render(request, 'useraccounts/login.html', context)
+
+def user_logout(request):
+    logout(request)
+    return redirect('frontpage')
