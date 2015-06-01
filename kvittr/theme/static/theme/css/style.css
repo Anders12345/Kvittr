@@ -17,3 +17,10 @@
     padding: 5px;
     margin-bottom: 11px;
 }
+
+.list-group-item {
+    word-wrap: break-word;
+}
+.addmarginbot {
+    margin-bottom: 10px;
+}
