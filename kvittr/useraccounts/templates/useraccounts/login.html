@@ -1,0 +1,14 @@
+ {% block login %}
+ <form class="fpform" method="POST" action="{% url 'user_login' %}">
+    <div class="form-group">
+        {% csrf_token %}
+        <label for="siUsername">Username</label>
+        <input type="text" name="username" id="siUsername" class="form-control" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="siPassword">Password</label>
+        <input type="password" name="password" id="siPassword" class="form-control" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Log in</button>
+</form>
+{% endblock %}
