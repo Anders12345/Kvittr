@@ -13,7 +13,7 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('frontpage')
+            return redirect('list_msgs')
         else:
             messages.add_message(request, messages.INFO, "Login failed")
             return redirect ('frontpage')
