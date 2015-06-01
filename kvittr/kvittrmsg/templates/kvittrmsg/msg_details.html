@@ -5,9 +5,11 @@
     		<h2>Details on message {{ msg.id }}</h2>
     		<ul class="list-group">
         		<li class="list-group-item">Message: {{ msg.msg }}</li>
-        		<li class="list-group-item">{{ msg.likes }}</li>
+        		<li id="id-likes-for-msg-{{ msg.id }}" class="list-group-item">{{ msg.likes }}</li>
+        		<li><a href="" class="add-likes-link list-group-item" data-msgid="{{ msg.id }}">Like this message</a></li>
         		<li class="list-group-item">{{ msg.created_by }} on {{ msg.created_datetime }}</li>
     		</ul>
     	</div>
     </div>
+    <input type="hidden" id="add_likes_url" value="/kvittrmsg/{{ msg.id }}/add_likes">
 {% endblock %}
