@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'theme',
     'useraccounts',
+    'kvittrmsg',
 )
 
 MIDDLEWARE_CLASSES = (
