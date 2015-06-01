@@ -1,0 +1,10 @@
+{% extends 'theme/frontpage.html' %}
+{% block frontpage %}
+    <h2>Details on message {{ msg.id }}</h2>
+    <ul>
+        <li>{{ msg.msg }}</li>
+        <li>{{ msg.likes }}</li>
+        <li>{{ msg.created_by }}</li>
+        <li>{{ msg.created_datetime }}</li>
+    </ul>
+{% endblock %}
