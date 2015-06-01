@@ -25,6 +25,12 @@ def list_msgs(request):
 		msgs = paginator.page(1)
 	except EmptyPage:
 		msgs = paginator.page(paginator.num_pages)
+	
 	context = {'msgs': msgs}
 	return render(request, 'kvittrmsg/list_msgs.html', context)
 
+def msg_details(request, id):
+	msg = Kvittrmsg.objects.get(pk=id)
+	msgs = Kvittrmsg.objects.all()
+	context = {'msg': msg}
+	return render(request, 'kvittrmsg/msg_details.html', context)
