@@ -23,6 +23,13 @@
 
   <div class="container">
     <div class="content">
+      {% if messages %}
+        <ul class="messages"> 
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
       <div class="starter-template">
         <h1>Welcome to kvittr!</h1>
         <p class="lead">Read other peoples messages.<br>Share your thoughts.</p>
