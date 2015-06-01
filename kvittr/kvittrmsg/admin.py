@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from kvittrmsg.models import Kvittrmsg
+
+admin.site.register(Kvittrmsg)
