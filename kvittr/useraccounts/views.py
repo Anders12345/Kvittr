@@ -29,10 +29,12 @@ def user_register(request):
         user.first_name = request.POST.get('firstname')
         user.last_name = request.POST.get('lastname')
         user.username = request.POST.get('username')
+        #Checks if username exits 
         if User.objects.filter(username=user.username).exists():
             messages.add_message(request, messages.INFO, "Username already exists.")
             return redirect('frontpage')
         user.email = request.POST.get('email')
+        #Checks if email exits    
         if User.objects.filter(email=user.email).exists():
             messages.add_message(request, messages.INFO,"Email already exists.")
             return redirect('frontpage')
@@ -47,6 +49,7 @@ def edit_profile(request):
         user.first_name = request.POST.get('firstname')
         user.last_name = request.POST.get('lastname')
         user.email = request.POST.get('email')
+        #Checks if email exits    
         if User.objects.filter(email=user.email).exists():
             messages.add_message(request, messages.INFO,"Email already exists.")
             return redirect('edit_profile')
