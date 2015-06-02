@@ -7,7 +7,7 @@
         		<li class="list-group-item">Message: {{ msg.msg }}</li>
         		<li id="id-likes-for-msg-{{ msg.id }}" class="list-group-item">{{ msg.likes }}</li>
         		<li class="list-group-item"><a href="" class="add-likes-link" data-msgid="{{ msg.id }}">Like this message</a></li>
-        		<li class="list-group-item">{{ msg.created_by }} on {{ msg.created_datetime }}</li>
+        		<li class="list-group-item">Posted by: {{ msg.created_by }} on {{ msg.created_datetime }}</li>
     		</ul>
     	</div>
     </div>
