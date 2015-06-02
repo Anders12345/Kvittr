@@ -1,4 +1,13 @@
 {% extends 'theme/frontpage.html' %}
+{% block facebook_sharing %}
+    <meta property="og:title" content="Kvittrmsg number: {{ msg.id }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="kvittr.no" />
+    <meta property="og:description" content="{{ msg.msg }}" />
+    <meta property="og:url" content="http://kvittr.no/meldinger/{{ msg.id }}" />
+    <meta property="og:image" content="http://kvittr.no/images/img.png" />
+    <meta property="og:image:secure_url" content="http://kvittr.no/images/img.png" />
+{% endblock %}
 {% block frontpage %}
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
