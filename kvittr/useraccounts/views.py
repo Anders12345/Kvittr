@@ -39,4 +39,17 @@ def user_register(request):
         user.set_password(request.POST.get('password'))
         user.save()
         messages.add_message(request, messages.INFO, "You registered successfully.")
-    return redirect('frontpage')    
+    return redirect('frontpage')   
+
+def edit_profile(request):
+    if request.method == "POST":
+        user = request.user
+        user.first_name = request.POST.get('firstname')
+        user.last_name = request.POST.get('lastname')
+        user.email = request.POST.get('email')
+        if User.objects.filter(email=user.email).exists():
+            messages.add_message(request, messages.INFO,"Email already exists.")
+            return redirect('edit_profile')
+        user.save(update_fields=['first_name', 'last_name', 'email'])
+        messages.add_message(request, messages.INFO, "Edited profile successfully.")
+    return render(request, 'useraccounts/edit_profile.html') 
