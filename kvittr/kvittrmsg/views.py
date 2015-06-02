@@ -32,7 +32,6 @@ def list_msgs(request):
 
 def msg_details(request, id):
 	msg = Kvittrmsg.objects.get(pk=id)
-	msgs = Kvittrmsg.objects.all()
 	context = {'msg': msg}
 	return render(request, 'kvittrmsg/msg_details.html', context)
 
